@@ -1,5 +1,7 @@
 package com.team5115.systems;
 
+import com.team5115.Constants;
+
 import edu.wpi.first.wpilibj.CANTalon;
 
 public class DriveTrain {
@@ -12,10 +14,10 @@ public class DriveTrain {
 	CANTalon backright;
 	
 	public DriveTrain() {
-		frontleft = new CANTalon(1);
-		frontright = new CANTalon(2);
-		backleft = new CANTalon(3);
-		backright = new CANTalon(4);
+		frontleft = new CANTalon(Constants.FRONT_LEFT_MOTOR_ID);
+		frontright = new CANTalon(Constants.FRONT_RIGHT_MOTOR_ID);
+		backleft = new CANTalon(Constants.BACK_LEFT_MOTOR_ID);
+		backright = new CANTalon(Constants.BACK_RIGHT_MOTOR_ID);
 
 		backleft.changeControlMode(CANTalon.TalonControlMode.Follower);
 		backright.changeControlMode(CANTalon.TalonControlMode.Follower);

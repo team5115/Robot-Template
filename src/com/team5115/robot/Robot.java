@@ -1,7 +1,7 @@
 
 package com.team5115.robot;
 
-import com.team5115.statemachines.ArcadeDrive;
+import com.team5115.statemachines.CarDrive;
 import com.team5115.systems.DriveTrain;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -11,38 +11,36 @@ public class Robot extends IterativeRobot {
 	
 	public static DriveTrain drivetrain;
 	
-	public static ArcadeDrive ad;
+	public static CarDrive cd;
 	
     public void robotInit() {
     	drivetrain = new DriveTrain();
     	
-    	ad = new ArcadeDrive();
+    	cd = new CarDrive();
     }
     
-    public void autonomousInit() {
-    	
-    }
+    public void autonomousInit() {}
 
     public void autonomousPeriodic() {
-    	Timer.delay(0.001);
+    	Timer.delay(0.005);
     }
     
     public void teleopInit() {
-    	ad.start();
+    	cd.setStcte(1);
     }
     
     public void teleopPeriodic() {
-        ad.update();
+        cd.update();
         
-        Timer.delay(0.001);
+        Timer.delay(0.005);
     }
     
     public void disabledInit() {
-    	ad.end();
+    	cd.setState(0);
     }
     
     public void disabledPeriodic() {
-    	Timer.delay(0.001);
+    	Timer.delay(0.005);
     }
     
 }
