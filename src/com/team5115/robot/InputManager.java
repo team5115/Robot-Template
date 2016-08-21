@@ -9,17 +9,20 @@ public class InputManager {
 	static Joystick joy = new Joystick(0);
 	
 	public static double getX() {
-		return treatAxis(joy.getX());
+		return treatAxis(joy.getRawAxis(Constants.AXIS_X));
 	}
 	
 	public static double getY() {
-		return treatAxis(joy.getY());
+		return treatAxis(joy.getRawAxis(Constants.AXIS_Y));
 	}
 	
 	public static double getThrottle() {
 		// Joystick give 1 to -1 but we need 0 to 1
 		return (1 - joy.getThrottle()) / 2;
 	}
+
+	public static boolean quickTurn() {
+		return joy.getRawButton(Constants.BUTTON_QUICK_TURN);
 	
 	// Handles squaring and deadband
 	public static double treatAxis(double val) {
