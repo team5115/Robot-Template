@@ -17,6 +17,6 @@ public class Constants {
 	// Driving
 	public static final double QUICK_TURN_POWER = 0.5;
 	public static final double NEG_INTERTIA_TURN = 1.0;
-	public static final double	NEG_INTERTIA_SPEED = 1.0;
+	public static final double NEG_INTERTIA_SPEED = 1.0;
 
 }
