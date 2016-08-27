@@ -22,7 +22,7 @@ public class Robot extends IterativeRobot {
 	public void autonomousInit() {}
 
 	public void autonomousPeriodic() {
-		Timer.delay(0.005);
+		Timer.delay(Constants.DELAY);
 	}
 
 	public void teleopInit() {
@@ -32,7 +32,7 @@ public class Robot extends IterativeRobot {
 	public void teleopPeriodic() {
 		hd.update();
 
-		Timer.delay(0.005);
+		Timer.delay(Constants.DELAY);
 	}
 
 	public void disabledInit() {
@@ -40,7 +40,7 @@ public class Robot extends IterativeRobot {
 	}
 
 	public void disabledPeriodic() {
-		Timer.delay(0.005);
+		Timer.delay(Constants.DELAY);
 	}
 
 }

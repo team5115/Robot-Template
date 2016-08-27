@@ -2,6 +2,8 @@ package com.team5115;
 
 public class Constants {
 
+	public static final int DELAY = 0.005;
+
 	// Buttons and Axes
 	public static final int AXIS_X = 1;
 	public static final int AXIS_Y = 2;

@@ -7,6 +7,7 @@ import com.team5115.Constants;
 public class HoffDrive extends StateMachineBase {
 
 	double speed, turn, throttle;
+	double dSpeed, dTurn;
 	double turnPower;
 	double lastSpeed = 0, lastTurn = 0;
 
@@ -20,8 +21,10 @@ public class HoffDrive extends StateMachineBase {
 			throttle = InputManager.getThrottle();
 
 			// Negative intertia. Increasing constants makes it more "repsonsive"
-			speed += Constants.NEG_INERTIA_SPEED * (speed - lastSpeed);
-			turn += Cosntants.NEG_INTERTIA_TURN * (turn - lastTurn);
+			dSpeed = (speed - lastSpeed) / Constants.DELAY;
+			dTurn = (turn - lastTurn) / Constants.DELAY;
+			speed += Constants.NEG_INERTIA_SPEED * dSpeed;
+			turn += Cosntants.NEG_INTERTIA_TURN * dTurn;
 
 			lastSpeed = speed;
 			lastTurn = turn;
@@ -31,8 +34,7 @@ public class HoffDrive extends StateMachineBase {
 				turnPower = turn * Constants.QUICK_TURN_POWER;
 			} else {
 				// Keep in mind speed will always be in [-1, 1]
-				// Use abs to make turning same direction forward and backward
-				turnPower = Math.abs(speed) * turn;
+				turnPower = speed * turn;
 			}
 
 			Robot.drivetrain.drive(speed + turnPower, speed - turnPower, throttle);
