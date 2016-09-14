@@ -26,7 +26,7 @@ public class Robot extends IterativeRobot {
 	}
 
 	public void teleopInit() {
-		hd.setStcte(1);
+		hd.setState(1);
 	}
 
 	public void teleopPeriodic() {

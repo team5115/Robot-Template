@@ -24,7 +24,7 @@ public class HoffDrive extends StateMachineBase {
 			dSpeed = (speed - lastSpeed) / Constants.DELAY;
 			dTurn = (turn - lastTurn) / Constants.DELAY;
 			speed += Constants.NEG_INERTIA_SPEED * dSpeed;
-			turn += Cosntants.NEG_INTERTIA_TURN * dTurn;
+			turn += Constants.NEG_INERTIA_TURN * dTurn;
 
 			lastSpeed = speed;
 			lastTurn = turn;

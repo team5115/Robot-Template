@@ -2,7 +2,7 @@ package com.team5115;
 
 public class Constants {
 
-	public static final int DELAY = 0.005;
+	public static final double DELAY = 0.005;
 
 	// Buttons and Axes
 	public static final int AXIS_X = 1;
@@ -18,7 +18,7 @@ public class Constants {
 
 	// Driving
 	public static final double QUICK_TURN_POWER = 0.5;
-	public static final double NEG_INTERTIA_TURN = 1.0;
-	public static final double NEG_INTERTIA_SPEED = 1.0;
+	public static final double NEG_INERTIA_TURN = 1.0;
+	public static final double NEG_INERTIA_SPEED = 1.0;
 
 }
