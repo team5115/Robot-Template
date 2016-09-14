@@ -23,6 +23,7 @@ public class InputManager {
 
 	public static boolean quickTurn() {
 		return joy.getRawButton(Constants.BUTTON_QUICK_TURN);
+	}
 	
 	// Handles squaring and deadband
 	public static double treatAxis(double val) {
